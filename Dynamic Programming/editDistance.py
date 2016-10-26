@@ -5,14 +5,17 @@ def editDistance(a,b):
 	m = len(b)
 	l = [[None]*(n+1) for i in range(m+1)]
 
-	for i in range(m+1):
+	for i in range(m+1):	
 		for j in range(n+1):
-			if i==0 or j==0:
-				l[i][j]=0
+			if i==0:
+				l[i][j]=j
+			elif j==0:
+				l[i][j]=i
 			elif b[i-1]==a[j-1]:
 				l[i][j]=l[i-1][j-1]
 			else:
 				l[i][j] = 1+min(l[i-1][j],l[i][j-1],l[i-1][j-1])
+				
 	return l[m][n]
 
 if __name__ == "__main__":
