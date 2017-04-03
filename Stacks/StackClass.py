@@ -21,3 +21,6 @@ class stack:
         if self.top==-1:
             return True
         return False
+
+    def size(self):
+        return self.top+1
