@@ -23,3 +23,8 @@ class queue:
     def values(self):
         return self.q
 
+    def front(self):
+        if self.s>0:
+            return self.q[0]
+        return
+                
