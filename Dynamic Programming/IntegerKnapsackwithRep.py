@@ -12,7 +12,7 @@ def knap(weight,values,n,M):
     for i in range(1,M+1):
         arr[i] = arr[i-1]
         for j in range(n):
-            if weight[j]<=i:
+            if weight[j]<   =i:
                 arr[i] = max(arr[i],arr[i-weight[j]]+values[j])
     return arr[M]
 
