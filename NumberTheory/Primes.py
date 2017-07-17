@@ -1,10 +1,12 @@
 def checkPrime(n):
     if n==2:
         return True
-    i=2
+    if n%2==0:
+        return False
+    i=3
     while i*i<=n:
         if n%i==0: return False
-        i+=1
+        i+=2
     return True
 
 def sieve(n):
@@ -32,7 +34,7 @@ def factorize(n):
 
 def factors(n):
     minPrime = [0]*(n+1)
-    i = 0
+    i = 2
     while i*i<=n:
         if minPrime[0]==0:
             for j in range(i*i,n+1,i):
@@ -49,6 +51,6 @@ def primefactors(n):
     minPrime = factors(n)
     while n!=1:
         res.append(minPrime[n])
-        n/=minPrime[i]
+        n/=minPrime[n]
     return res
     
